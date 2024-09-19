@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { Product } from '../types/Product';
-import { ProductDetails } from '../types/ProductDetails'; // Assuming ProductDetails is in a separate file
+import { ProductDetails } from '../types/ProductDetails'; 
 
 const BASE_URL = 'https://world.openfoodfacts.org';
 
-// Create an axios instance with a custom config
+
 
 
 const axiosInstance = axios.create({
@@ -12,7 +12,7 @@ const axiosInstance = axios.create({
   timeout: 10000, 
 });
 
-// Add a response interceptor for handling rate limiting
+
 
 
 axiosInstance.interceptors.response.use(

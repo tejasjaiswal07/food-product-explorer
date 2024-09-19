@@ -64,12 +64,13 @@ const HomePage: React.FC = () => {
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    // Implement category filtering logic here
+    
+
+    
   };
 
   const handleSortChange = (sortBy: string) => {
     setSortBy(sortBy);
-    // Implement sorting logic here
   };
 
   return (
