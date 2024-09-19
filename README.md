@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Food Product Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+**Food Product Explorer** is a modern web application designed to help users explore a wide range of food products with ease. Powered by the OpenFoodFacts API, the application allows users to search, filter, and dive into detailed information about their favorite products. Whether you’re looking to compare nutritional values or check ingredients, the Food Product Explorer simplifies the process, making it a must-have tool for health-conscious individuals and food enthusiasts alike.
 
-## Available Scripts
+## Key Features
+### Seamless Product Search
+- Search for food products by name or barcode directly from the homepage.
+- Get relevant results instantly, with product images, names, categories, and key nutritional information displayed at a glance.
 
-In the project directory, you can run:
+### Dynamic Category Filtering
+- Easily filter products by categories such as beverages, dairy, snacks, and more.
+- Fetch categories dynamically from the OpenFoodFacts API for the most up-to-date classifications.
 
-### `npm start`
+### Smart Sorting Options
+- Sort food products by:
+  - **Name**: Alphabetical (A-Z, Z-A)
+  - **Nutrition Grade**: Sort by grades from A (healthiest) to E (least healthy).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Detailed Product Information
+- Click on any product to view its detailed page, which includes:
+  - Product image and full ingredients list.
+  - Nutritional breakdown: energy, fat, carbs, proteins, and more.
+  - Product labels, such as vegan, gluten-free, and other dietary specifications.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Infinite Scrolling & Pagination
+- Effortlessly browse through the product list with infinite scrolling or load more functionality.
+- Ensure smooth navigation without any delays or interruptions.
 
-### `npm test`
+### Fully Responsive Design
+- Optimized for both mobile and desktop devices, offering a seamless experience regardless of the screen size.
+  
+## Technology Stack
+- **Frontend:** Built using ReactJS for fast and dynamic user experiences.
+- **Styling:** Tailored with TailwindCSS for responsive and flexible UI components.
+- **API:** Integrated with the OpenFoodFacts API to fetch real-time food product data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+- Node.js (v14 or higher)
+- NPM or Yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/tejasjaiswal07/food-product-explorer.git
