@@ -29,16 +29,33 @@ axiosInstance.interceptors.response.use(
 );
 
 export const api = {
-  getProducts: async (page: number = 1, pageSize: number = 20): Promise<Product[]> => {
+  getProducts: async (
+    page: number = 1,
+    pageSize: number = 20,
+    category?: string,
+    sortBy?: string
+  ): Promise<Product[]> => {
     try {
-      const response = await axiosInstance.get('/cgi/search.pl', {
-        params: {
-          json: true,
-          page,
-          page_size: pageSize,
-          action: 'process',
-        },
-      });
+      const params: any = {
+        json: true,
+        page,
+        page_size: pageSize,
+        action: 'process',
+      };
+
+      if (category) {
+        params.tagtype_0 = 'categories';
+        params.tag_contains_0 = 'contains';
+        params.tag_0 = category;
+      }
+
+      if (sortBy) {
+        const [field, order] = sortBy.split('_');
+        params.sort_by = field;
+        params.sort_order = order === 'desc' ? 'desc' : 'asc';
+      }
+
+      const response = await axiosInstance.get('/cgi/search.pl', { params });
       return response.data.products.map((product: any) => ({
         id: product.code,
         name: product.product_name,

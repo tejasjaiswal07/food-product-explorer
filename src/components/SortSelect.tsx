@@ -13,8 +13,8 @@ const SortSelect: React.FC<SortSelectProps> = ({ onSortChange }) => {
       <option value="">Sort by</option>
       <option value="name_asc">Name (A-Z)</option>
       <option value="name_desc">Name (Z-A)</option>
-      <option value="grade_asc">Nutrition Grade (Ascending)</option>
-      <option value="grade_desc">Nutrition Grade (Descending)</option>
+      <option value="grade_asc">Nutrition Grade (A-E)</option>
+      <option value="grade_desc">Nutrition Grade (E-A)</option>
     </select>
   );
 };
