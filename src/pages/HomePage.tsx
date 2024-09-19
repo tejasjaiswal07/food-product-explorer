@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { api } from '../services/api';
 import { Product } from '../types/Product';
+import { sortProducts } from '../utils/sorting';
 import ProductCard from '../components/ProductCard';
 import SearchBar from '../components/SearchBar';
 import CategoryFilter from '../components/CategoryFilter';
@@ -21,9 +22,19 @@ const HomePage: React.FC = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const newProducts = await api.getProducts(reset ? 1 : page);
-      setProducts((prevProducts) => (reset ? newProducts : [...prevProducts, ...newProducts]));
-      setPage((prevPage) => (reset ? 2 : prevPage + 1));
+      const newProducts = await api.getProducts(
+        reset ? 1 : page,
+        20,
+        selectedCategory,
+        sortBy
+      );
+      if (reset) {
+        setProducts(newProducts);
+        setPage(2);
+      } else {
+        setProducts((prevProducts) => [...prevProducts, ...newProducts]);
+        setPage((prevPage) => prevPage + 1);
+      }
       setHasMore(newProducts.length > 0);
     } catch (error) {
       setError('Error fetching products. Please try again later.');
@@ -31,12 +42,15 @@ const HomePage: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [page]);
+  }, [page, selectedCategory, sortBy]);
 
   useEffect(() => {
-    fetchProducts();
+    fetchProducts(true);
+  }, [selectedCategory, sortBy]);
+
+  useEffect(() => {
     fetchCategories();
-  }, [fetchProducts]);
+  }, []);
 
   const fetchCategories = async () => {
     try {
@@ -64,13 +78,12 @@ const HomePage: React.FC = () => {
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    
-
-    
+    setPage(1);
   };
 
-  const handleSortChange = (sortBy: string) => {
-    setSortBy(sortBy);
+  const handleSortChange = (newSortBy: string) => {
+    setSortBy(newSortBy);
+    setPage(1);
   };
 
   return (

@@ -6,7 +6,11 @@ interface CategoryFilterProps {
   onCategoryChange: (category: string) => void;
 }
 
-const CategoryFilter: React.FC<CategoryFilterProps> = ({ categories, selectedCategory, onCategoryChange }) => {
+const CategoryFilter: React.FC<CategoryFilterProps> = ({
+  categories,
+  selectedCategory,
+  onCategoryChange,
+}) => {
   return (
     <select
       value={selectedCategory}
@@ -24,3 +28,4 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({ categories, selectedCat
 };
 
 export default CategoryFilter;
+
