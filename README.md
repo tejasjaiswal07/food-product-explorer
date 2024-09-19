@@ -35,6 +35,9 @@
 - **Styling:** Tailored with TailwindCSS for responsive and flexible UI components.
 - **API:** Integrated with the OpenFoodFacts API to fetch real-time food product data.
 
+### Time Taken
+- The time taken to complete this assignment was approximately 6 hours and 30 minutes.
+
 
 ## Getting Started
 
@@ -46,3 +49,13 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/tejasjaiswal07/food-product-explorer.git
+
+2 cd food-product-explorer
+
+3 npm install
+
+4 npm start
+
+
+### Deployed Link
+[Link](https://food-product-explorer.vercel.app/)
